@@ -6,36 +6,41 @@ $color2: #88b98f;
 }
 
 .topic-body {
-  background: white;
-  margin-top: 10px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 0 0 0 rgba(0,0,0,0.12);
-  padding: 15px 20px 0 20px;
-  float: left;
-  border-radius: 4px;
-  border-bottom: none;
-  .topic-meta-data {
-      background: $color1;
-      padding: 1em;
-      border-radius: 8px;
-  }
+    background: white;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 0 0 0 rgba(0,0,0,0.12);
+    padding: 15px 20px 0 20px;
+    float: left;
+    border-radius: 4px;
+    border-bottom: none;
+    .topic-meta-data {
+        background: $color1;
+        padding: 1em;
+        border-radius: 8px;
+    }
 }
 
 .topic-avatar {
-  border-top: none;
-  border-bottom: none;
-  padding-right: 10px;
+    border-top: none;
+    border-bottom: none;
+    padding-right: 10px;
 }
 
-.btn-default {
-  background: #ededed;
-  color: #595959;
-  border-radius: 5px;
+$prefix: btn-;
+
+.#{$prefix} {
+    &default {
+        background: #ededed;
+        color: #595959;
+        border-radius: 5px;
+    }
+    &primary {
+        background-color: #88b98f;
+        color: white;
+        border-radius: 5px;
+    }
 }
-.btn-primary {
-  background-color: #88b98f;
-  color: white;
-  border-radius: 5px;
-}
+
 .names span a {
-  color: $color2;
+    color: $color2;
 }
