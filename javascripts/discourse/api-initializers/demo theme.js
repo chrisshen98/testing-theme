@@ -13,5 +13,9 @@ export default apiInitializer('0.11.1', (api) => {
       document.getElementById('output').style.color = 'white';
       document.getElementById('output').style.background = '#88b98f';
     };
+
+    document.getElementById('demo').onclick = function () {
+      alert("HelloWorld");
+    };
   });
 });
