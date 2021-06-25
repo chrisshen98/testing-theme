@@ -44,3 +44,17 @@ $prefix: btn-;
 .names span a {
     color: $color2;
 }
+
+.list-controls .combo-box .combo-box-header {
+    border-radius: 4px !important;
+    font-size: 16px !important;
+    min-height: 36px !important;
+    padding: 5px 15px !important;
+}
+.nav-pills>li a.active {
+    color: var(--secondary);
+    background-color: $color2;
+}
+.nav-pills>li>a {
+    border-radius: 4px !important;
+}
