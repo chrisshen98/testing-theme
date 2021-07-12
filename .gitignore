@@ -1,3 +1,9 @@
 .discourse-site
 node_modules
 HELP
+.vscode
+.eslintrc
+.template-lintrc.js
+package.json
+yarn.lock
+package.json
