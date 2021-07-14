@@ -1,11 +1,10 @@
 :root {
-    --primary: #222222;
-    --secondary: #ffffff;
-    --tertiary: #0088cc;
-    --quaternary: #e45735;
-    --header-background: #ffffff;
+    --primary: #8f00a2;
+    --secondary: #fdeeff;
+    --tertiary: #0c5b65;
+    --quaternary: #805a5a;
+    --header-background: #c055ff;
     --header-primary: #333333;
-  
   }
   
   * {
@@ -26,24 +25,6 @@
       }
   }
   
-  .default, .posts, .views, .activity {
-    display: none;
-  }
-  
-  
-  .topic-list {
-    width: 100%;
-    .topic-list-item {
-      float: left;
-      width: 33.3%;
-      height: 150px;
-      &:hover {
-        transition: transform .75s;
-        transform: translateX(5px);
-      }
-    }
-  }
-  
   .nav-pills > li > a {
     transition: background .75s;
   }
@@ -52,28 +33,6 @@
     transition: all .75s;
     background-color: var(--secondary);
   }
-  
-  
-  #switcher-container {
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 20px);
-    max-width: 1110px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 10px;
-  }
-  
-  .themes {
-    padding: 6px 10px;
-    border-radius: 15px;
-    transition: background .75s;
-    background-color: transparent;
-    &:hover {
-      background-color: var(--quaternary);
-    }
-  }
-  
   
   // start of toggle button (Chris)
   
