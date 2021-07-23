@@ -2,57 +2,61 @@ import { apiInitializer } from 'discourse/lib/api';
 
 export default apiInitializer('0.11.1', (api) => {
   console.log('hello world from api initializer!'); 
+  const { iconNode } = require("discourse-common/lib/icon-library");
   
   api.onPageChange(() => {
-    document.getElementById('themeCheckbox').onclick = function() {
-      var cur = document.getElementById('themeCheckbox');
-      if (cur.checked) {
-        console.log('change to black');
-        for (let i = 0; i < parameters.length; i++) {
-          document.documentElement.style.setProperty('--' + parameters[i], '#' + dark_theme[i]);
-        };
-
-        elems = document.getElementsByClassName("themes")
-        for (let i = 0; i < elems.length; i++) {
-          elems[i].style.backgroundColor = "transparent";
-          if (elems[i].id == 'dark_theme') {
-            elems[i].style.backgroundColor = "var(--quaternary)";
-          }
-        }
+    // document.getElementById('note-button1').onclick = function() {
+    //   var x = document.getElementById("bottomUserNote");
+    //   if (x.style.display == "none") {
+    //     x.style.display = "block";
+    //   } else {
+    //     x.style.display = "none";
+    //   }
+    // }
+    document.getElementById('menuUserNoteControl').onclick = function() {
+      var x = document.getElementById("usernoteWrapperHeader");
+      if (x.style.display == "none") {
+        x.style.display = "block";
       } else {
-        console.log('change to red');
-        for (let i = 0; i < parameters.length; i++) {
-          document.documentElement.style.setProperty('--' + parameters[i], '#' + default_theme[i]);
-        };
-
-        elems = document.getElementsByClassName("themes")
-        for (let i = 0; i < elems.length; i++) {
-          elems[i].style.backgroundColor = "transparent";
-          if (elems[i].id == 'default_theme') {
-            elems[i].style.backgroundColor = "var(--quaternary)";
-          }
-        }
-      } 
+        x.style.display = "none";
+      }
+    }
+    document.getElementById('bottomUserNoteControl').onclick = function() {
+      var x = document.getElementById("bottomUserNote");
+      if (x.style.display == "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
     }
   });
   
-  api.decorateWidget('header-icons:before', helper => {
-    return helper.h('li.ToggleWrapper', [
-      helper.h('a.ToggleTitleLight', {
-        text:'Light',
-        title: 'Change the Theme Color to Light'
-      }),
-      helper.h('label.switch', [
-        helper.h('input', {
-          id:'themeCheckbox',
-          type:'checkbox'
-        }),
-        helper.h('span.slider.round')
-      ]),
-      helper.h('a.ToggleTitleDark', {
-        text:'Dark',
-        title: 'Change the Theme Color to Dark'
-      })
-    ])
-  });
+    api.decorateWidget('header-icons:before', helper => {
+      // note-dropdown 
+      return helper.h('li.header-dropdown-toggle.note-dropdown', [
+        helper.h('a.icon.btn-flat', {
+          title: 'take notes',
+          id: 'menuUserNoteControl'
+        }, iconNode('sticky-note')),
+      ]);
+    });
+
+    // I guess we don't use this now but I'll keep them in comments
+    // api.decorateWidget('timeline-controls:after', helper => {
+    //   // note-button 
+    //   return helper.h('button.widget-button.btn.btn-default.no-text.btn-icon.note-button', {
+    //       title: 'take notes',
+    //       id: 'note-button1'
+    //     }, iconNode('sticky-note'),
+    //   );
+    // });
+    
+    // api.decorateWidget('timeline-footer-controls:after', helper => {
+    //   // note-button 
+    //   return helper.h('button.widget-button.btn.btn-default.no-text.btn-icon.note-button', {
+    //       title: 'take notes',
+    //       id: 'note-button2'
+    //     }, iconNode('sticky-note'),
+    //   );
+    // });
 });

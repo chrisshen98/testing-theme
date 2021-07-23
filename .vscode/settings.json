@@ -1,4 +1,6 @@
 {
     "zenMode.hideTabs": false,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "js/ts.implicitProjectConfig.experimentalDecorators": true,
+    "js/ts.implicitProjectConfig.checkJs": true
 }
